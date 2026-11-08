@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Anton', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --color-crimson: #A30A19;
+  --color-burgundy: #350309;
+  --color-dark-bg: #030303;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #030303;
+  color: #FFFFFF;
+}
+
+/* Custom cinematic glow and scanline / film grain utility */
+.cinematic-glow {
+  box-shadow: 0 0 25px rgba(163, 10, 25, 0.45);
+}
+
+.cinematic-glow-strong {
+  box-shadow: 0 0 45px rgba(163, 10, 25, 0.7);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(163, 10, 25, 0.6);
+}
+
+/* Subtle film grain overlay */
+.film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cinematic Laser Scan Animation */
+@keyframes laserScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-scan {
+  animation: laserScan 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Organic Floating Levitation */
+@keyframes organicFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-organic-float {
+  animation: organicFloat 6s ease-in-out infinite;
+}
+
+/* Subtle Crimson Aura Breathing */
+@keyframes crimsonAura {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(163, 10, 25, 0.25), 0 0 70px rgba(163, 10, 25, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(163, 10, 25, 0.5), 0 0 95px rgba(163, 10, 25, 0.2);
+  }
+}
+
+.animate-crimson-aura {
+  animation: crimsonAura 4s ease-in-out infinite;
+}
